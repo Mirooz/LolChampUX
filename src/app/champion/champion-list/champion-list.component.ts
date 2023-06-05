@@ -11,10 +11,16 @@ import { ChampListServiceService } from './champ-list-service.service';
 export class ChampionListComponent implements OnInit {
   championList: Champion[] | undefined;
 
+  searchQuery: string = '';
   constructor(private champListService: ChampListServiceService) { }
 
   ngOnInit(): void {
-    this.championList = this.champListService.getListChampions();
+    this.champListService.getListChampions().subscribe(
+      (champions) => {
+        this.championList = champions;
+        console.log(this.championList)
+      }
+    );
   }
 
   goToChampion(champion: Champion): void {

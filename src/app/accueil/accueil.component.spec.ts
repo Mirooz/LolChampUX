@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AccueilComponent } from './accueil.component';
+import { ChampionListComponent } from '../champion/champion-list/champion-list.component';
 
 describe('AccueilComponent', () => {
   let component: AccueilComponent;
