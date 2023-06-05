@@ -1,0 +1,32 @@
+h1 {
+    text-align: center;
+  }
+
+
+  .search-bar input {
+    padding: 5px;
+    margin-right: 10px;
+  }
+  
+  .champion-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .champion-card {
+    text-align: center;
+    margin: 10px;
+  }
+  
+  .champion-card img {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .champion-card h3 {
+    margin-top: 10px;
+  }
+  .center-title {
+    text-align: center;
+  }

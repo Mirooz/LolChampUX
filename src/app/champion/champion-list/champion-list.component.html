@@ -1,0 +1,20 @@
+
+<div class="container">
+    <div class="row">
+        <div *ngFor="let champion of championList" class="col l2 m3 s6">
+            <div (click)="goToChampion(champion)" class="card">
+                <div class="card-image">
+                    <img [src]="champion.image_url" alt="Champion Image" />
+                </div>
+                <div class="card-content">
+                    <p class="champion-name center">{{ champion.name | uppercase }}</p>
+                    <div class="champion-types">
+                        <span class="champion-type" *ngFor="let type of champion.partype">
+                            {{ type }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
