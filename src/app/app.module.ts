@@ -3,8 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AccueilComponent } from './accueil/accueil.component';
-import { SearchBarComponent } from './champion/search-bar/search-bar.component';
 import { FormsModule } from '@angular/forms';
 import { ChampionModule } from './champion/champion.module';
 import { HttpClientInMemoryWebApiModule, InMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -23,8 +21,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent,
-    AccueilComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
