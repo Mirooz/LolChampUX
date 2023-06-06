@@ -11,6 +11,6 @@ export class SearchBarComponent {
   onSearch(event: any): void {
     const query: string = event?.target?.value || '';
     this.searchQueryChange.emit(query);
-    console.log(this.searchQueryChange);
+    console.log(query);
   }
 }

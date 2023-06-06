@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CHAMPIONS } from '../../champions-MOKS';
-import { Champion } from '../../champion';
+import { Champion } from '../champion';
 import { HttpClient } from '@angular/common/http';
 import { Observable, catchError, of, tap } from 'rxjs';
 
@@ -20,14 +20,20 @@ export class ChampListServiceService {
     )
   }
 
+  getChampion(id : string): Observable<Champion|undefined> {
+    return this.http.get<Champion>(`api/champions/${id}`).pipe(
+      tap((response) => this.log(response)),
+      catchError((error) => this.handleError(error, undefined))
+    )
+  }
+
   private log(response: any) {
     console.table(response);
   }
-  private handleError(error: any, result: Champion[]): Observable<Champion[]> {
+  private handleError(error: Error, errorValue: any) {
     console.error(error);
-    return of(result);
+    return of(errorValue);
   }
-
   setSearchQuery(searchQuery : string) : void {
     this.searchQuery = searchQuery;
   }

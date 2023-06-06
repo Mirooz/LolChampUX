@@ -1,4 +1,4 @@
-import { Champion } from './champion';
+import { Champion } from './champion/champion';
 
 export const CHAMPIONS: Champion[] = [
   new Champion(

@@ -3,7 +3,7 @@
   <div class="row justify-content-start">
     <ng-container *ngFor="let champion of filteredChampionList">
       <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-        <div (click)="goToChampion(champion)" class="card">
+        <div (click)="goToChampion(champion)" class="card" >
           <div class="card-image">
             <img [src]="champion.image_url" alt="Champion Image" />
           </div>

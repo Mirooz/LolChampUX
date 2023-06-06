@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Champion } from '../../champion';
+import { Champion } from '../champion';
 import { CHAMPIONS } from '../../champions-MOKS';
 import { ChampListServiceService } from './champ-list-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-champion-list',
@@ -13,7 +14,7 @@ export class ChampionListComponent implements OnInit {
   filteredChampionList: Champion[] | undefined;
   searchQuery: string = '';
 
-  constructor(private champListService: ChampListServiceService) {}
+  constructor(private champListService: ChampListServiceService, private router : Router) {}
 
   ngOnInit(): void {
     this.champListService.getListChampions().subscribe((champions) => {
@@ -23,7 +24,7 @@ export class ChampionListComponent implements OnInit {
   }
 
   goToChampion(champion: Champion): void {
-    // Mettez ici le code pour rediriger vers la page du champion sélectionné
+    this.router.navigate(['/champions', champion.id]);
   }
 
   onSearchQuery(query: string): void {

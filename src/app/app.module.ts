@@ -7,8 +7,19 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { SearchBarComponent } from './champion/search-bar/search-bar.component';
 import { FormsModule } from '@angular/forms';
 import { ChampionModule } from './champion/champion.module';
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { HttpClientInMemoryWebApiModule, InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './InMemoryDataService';
+import { RouterModule, Routes } from '@angular/router';
+import { ChampionListComponent } from './champion/champion-list/champion-list.component';
+import { ChampionDetailComponent } from './champion/champion-detail/champion-detail.component';
+import { HttpClientModule } from '@angular/common/http';
+
+const routes: Routes = [
+  { path: 'champions/:id', component: ChampionDetailComponent },
+  { path: 'champions', component: ChampionListComponent },
+  { path: '', redirectTo: '/champions', pathMatch: 'full' },
+  // Ajoutez d'autres routes si nécessaire
+];
 
 @NgModule({
   declarations: [
@@ -21,7 +32,9 @@ import { InMemoryDataService } from './InMemoryDataService';
     
     FormsModule,
     ChampionModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService)
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService,{ dataEncapsulation: false }),
+    RouterModule.forChild(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

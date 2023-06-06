@@ -5,13 +5,15 @@ import { ChampionListComponent } from './champion-list/champion-list.component';
 import { ChampListServiceService } from './champion-list/champ-list-service.service';
 import { AppModule } from "../app.module";
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { ChampionDetailComponent } from './champion-detail/champion-detail.component';
 
 
 
 @NgModule({
     declarations: [
         ChampionListComponent,
-        SearchBarComponent
+        SearchBarComponent,
+        ChampionDetailComponent
     ],
     providers: [ChampListServiceService],
     exports: [ChampionListComponent],
