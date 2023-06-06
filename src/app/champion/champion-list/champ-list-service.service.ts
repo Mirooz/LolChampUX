@@ -9,6 +9,7 @@ import { Observable, catchError, of, tap } from 'rxjs';
 })
 export class ChampListServiceService {
 
+  searchQuery: string = '';
   constructor(private http: HttpClient) {}
 
   //API
@@ -25,5 +26,12 @@ export class ChampListServiceService {
   private handleError(error: any, result: Champion[]): Observable<Champion[]> {
     console.error(error);
     return of(result);
+  }
+
+  setSearchQuery(searchQuery : string) : void {
+    this.searchQuery = searchQuery;
+  }
+  getSearchQuery() : string {
+    return this.searchQuery;
   }
 }

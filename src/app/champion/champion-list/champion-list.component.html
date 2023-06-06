@@ -1,24 +1,22 @@
-
-<app-search-bar></app-search-bar>
+<app-search-bar (searchQueryChange)="onSearchQuery($event)"></app-search-bar>
 <div class="container">
-    <div class="row justify-content-start">
-      <ng-container *ngFor="let champion of championList">
-        <div *ngIf="champion.name.includes('')" class="col-lg-2 col-md-3 col-sm-4 col-6">
-          <div (click)="goToChampion(champion)" class="card">
-            <div class="card-image">
-              <img [src]="champion.image_url" alt="Champion Image" />
-            </div>
-            <div class="card-content">
-              <p class="champion-name center">{{ champion.name | uppercase }}</p>
-              <div class="champion-types">
-                <span class="champion-type" *ngFor="let type of champion.partype">
-                  {{ type }}
-                </span>
-              </div>
+  <div class="row justify-content-start">
+    <ng-container *ngFor="let champion of filteredChampionList">
+      <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+        <div (click)="goToChampion(champion)" class="card">
+          <div class="card-image">
+            <img [src]="champion.image_url" alt="Champion Image" />
+          </div>
+          <div class="card-content">
+            <p class="champion-name center">{{ champion.name | uppercase }}</p>
+            <div class="champion-types">
+              <span class="champion-type" *ngFor="let type of champion.partype">
+                {{ type }}
+              </span>
             </div>
           </div>
         </div>
-      </ng-container>
-    </div>
+      </div>
+    </ng-container>
   </div>
-  
+</div>
