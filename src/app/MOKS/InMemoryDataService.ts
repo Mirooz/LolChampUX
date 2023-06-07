@@ -1,6 +1,7 @@
   import { Injectable } from '@angular/core';
   import { InMemoryDbService } from 'angular-in-memory-web-api';
   import { CHAMPIONS } from './champions-MOKS';
+import { STATS_MOCKS } from './stats-MOKS';
 
   @Injectable({
     providedIn: 'root'
@@ -9,6 +10,7 @@
 
     createDb() {
         const champions = CHAMPIONS;
-        return { champions };
+        const stats = STATS_MOCKS;
+        return { champions, stats };
     }
   }

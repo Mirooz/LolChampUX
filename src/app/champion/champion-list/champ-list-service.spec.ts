@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ChampListServiceService } from './champ-list-service.service';
+import { ChampListServiceService } from './champ-list-service';
 
 describe('ChampListServiceService', () => {
   let service: ChampListServiceService;

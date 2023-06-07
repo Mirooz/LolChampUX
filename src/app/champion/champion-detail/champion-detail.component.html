@@ -1,10 +1,22 @@
-<div *ngIf="champion">
-    <img [src]="'/'+champion.image_url" alt="Photo du champion">
-    <h2>{{ champion.name }}</h2>
-    <h3>{{ champion.title }}</h3>
-    <p>Vie: {{ champion.infoDefense }}</p>
-    <p>Défense: {{ champion.infoDefense }}</p>
-    <p>Magie: {{ champion.infoMagic }}</p>
-    <p>Difficulté: {{ champion.infoDifficulty }}</p>
-    <p>Attaque: {{ champion.infoAttack }}</p>
+<div class="container d-flex align-items-center justify-content-center" style="height: 80vh;">
+  <div *ngIf="champion && stats">
+    <div class="card mx-auto" style="width: 18rem;">
+      <img class="card-img-top" [src]="champion.image_url" alt="Photo du champion">
+      <div class="card-body">
+        <h2 class="card-title">{{ champion.name }}</h2>
+        <h3 class="card-subtitle mb-2 text-muted">{{ champion.title }}</h3>
+        <p class="card-text">Vie: {{ stats.hp }} <span class="orange-text">(+{{ stats.hpperlevel }})</span></p>
+        <p class="card-text">Défense: {{ stats.armor }} <span class="orange-text">(+{{ stats.armorperlevel }})</span></p>
+        <p class="card-text">Magie: {{ stats.mp }} <span class="orange-text">(+{{ stats.mpperlevel }})</span></p>
+        <p class="card-text">Attaque: {{ stats.attackdamage }} <span class="orange-text">(+{{ stats.attackdamageperlevel }})</span></p>
+        <p class="card-text">Vitesse d'attaque: {{ stats.attackspeed }} <span class="orange-text">(+{{ stats.attackspeedperlevel }})</span></p>
+        <p class="card-text">Critique: {{ stats.crit }} <span class="orange-text">(+{{ stats.critperlevel }})</span></p>
+        <p class="card-text">Régénération de HP: {{ stats.hpregen }} <span class="orange-text">(+{{ stats.hpregenperlevel }})</span></p>
+        <p class="card-text">Régénération de mana: {{ stats.mpregen }} <span class="orange-text">(+{{ stats.mpregenperlevel }})</span></p>
+        <p class="card-text">Portée d'attaque: {{ stats.attackrange }}</p>
+        <p class="card-text">Vitesse de mouvement: {{ stats.movespeed }}</p>
+      </div>
+    </div>
   </div>
+  <app-spells></app-spells>
+</div>

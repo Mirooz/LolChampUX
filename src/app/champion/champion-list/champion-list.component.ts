@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Champion } from '../champion';
-import { CHAMPIONS } from '../../champions-MOKS';
-import { ChampListServiceService } from './champ-list-service.service';
+import { Champion } from '../model/champion';
+import { CHAMPIONS } from '../../MOKS/champions-MOKS';
+import { ChampListServiceService } from './champ-list-service';
 import { Router } from '@angular/router';
 
 @Component({

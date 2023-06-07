@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { ChampionModule } from './champion/champion.module';
 import { HttpClientInMemoryWebApiModule, InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './InMemoryDataService';
+import { InMemoryDataService } from './MOKS/InMemoryDataService';
 import { RouterModule, Routes } from '@angular/router';
 import { ChampionListComponent } from './champion/champion-list/champion-list.component';
 import { ChampionDetailComponent } from './champion/champion-detail/champion-detail.component';
