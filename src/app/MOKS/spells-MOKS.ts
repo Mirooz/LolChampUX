@@ -1,93 +1,43 @@
 import { Spells } from "../champion/model/spells";
 
-export const spellsMock: Spells[] = [
-    {
-      id: "AatroxQ",
-      championid: "Aatrox",
-      name: "Épée des Darkin",
-      description: "Aatrox abat son épée devant lui, infligeant des dégâts physiques. Il peut frapper jusqu'à 3 fois et chaque coup a une zone d'effet différente.",
-      tooltip: "Aatrox abat son épée, infligeant <physicalDamage>{{ qdamage }} pts de dégâts physiques</physicalDamage>. Si l'ennemi est touché par le tranchant, il est brièvement <status>projeté dans les airs</status> et subit <physicalDamage>{{ qedgedamage }} pts de dégâts</physicalDamage> à la place. Cette compétence peut être <recast>réactivée</recast> deux fois, chaque coup changeant de forme et infligeant 25% de dégâts de plus que la précédente.{{ spellmodifierdescriptionappend }}",
-      maxrank: 5,
-      cooldown: "{14,12,10,8,6}",
-      cooldownburn: "14/12/10/8/6",
-      cost: "{0,0,0,0,0}",
-      costburn: "Pas de coût",
-      resource: "25000",
-      range: "{25000,25000,25000,25000,25000}",
-      maxammo: 25000,
-      effect: "{null,0,0,0,0,0,0,0,0,0,0}",
-      effectburn: "Pas de coût",
-      costtype: "-1",
-      leveltipLabel: "{{{ cooldown }} -> {{ cooldownNL }},{{ qbasedamage }} -> {{ qbasedamageNL }},{{ qtotaladratio*100.000000 }}% -> {{ qtotaladrationl*100.000000 }}%}",
-      leveltipEffect: "{null,{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0}}",
-      rangeburn: "{Délai de récupération,Dégâts,Ratio de dégâts d'attaque totaux}",
-      image_url: "14927"
-    },
-    {
-      id: "AatroxW",
-      championid: "Aatrox",
-      name: "Chaînes infernales",
-      description: "Aatrox frappe le sol, blessant le premier ennemi touché. Les champions et les grands monstres doivent vite quitter la zone d'effet sous peine d'être ramenés de force au point d'impact et de subir à nouveau les dégâts.",
-      tooltip: "Aatrox lance une chaîne, <status>ralentissant</status> le premier ennemi touché de {{ wslowpercentage*-100 }}% pendant {{ wslowduration }} sec et infligeant <physicalDamage>{{ wdamage }} pts de dégâts physiques</physicalDamage>. Les champions et les grands monstres de la jungle doivent quitter la zone d'effet dans les {{ wslowduration }} sec sous peine d'être <status>ramenés de force</status> au point d'impact et de subir à nouveau les dégâts.{{ spellmodifierdescriptionappend }}",
-      maxrank: 5,
-      cooldown: "{20,18,16,14,12}",
-      cooldownburn: "20/18/16/14/12",
-      cost: "{0,0,0,0,0}",
-      costburn: "Pas de coût",
-      resource: "825",
-      range: "{825,825,825,825,825}",
-      maxammo: 825,
-      effect: "{null,0,0,0,0,0,0,0,0,0,0}",
-      effectburn: "Pas de coût",
-      costtype: "-1",
-      leveltipLabel: "{{{ cooldown }} -> {{ cooldownNL }},{{ wbasedamage }} -> {{ wbasedamageNL }},{{ wslowpercentage*-100.000000 }}% -> {{ wslowpercentagenl*-100.000000 }}%}",
-      leveltipEffect: "{null,{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0}}",
-      rangeburn: "{Délai de récupération,Dégâts,Ralentissement}",
-      image_url: "14928"
-    }
-    ,
-    {
-        id: "AatroxE",
-        championid: "Aatrox",
-        name: "Ruée obscure",
-        description: "Passivement, Aatrox se soigne quand il blesse des champions ennemis. À l'activation, il se rue dans une direction.",
-        tooltip: "<spellPassive>Passive :</spellPassive> Aatrox gagne <lifeSteal>+{{ espellvamp }}% d'omnivampirisme</lifeSteal> contre les champions. Ce bonus augmente à <lifeSteal>+{{ espellvampempowered }}% d'omnivampirisme</lifeSteal> pendant <keywordMajor>Fossoyeur des mondes</keywordMajor>.<br /><br /><spellActive>Active :</spellActive> Aatrox se rue dans une direction, infligeant <physicalDamage>{{ edamage }} pts de dégâts physiques</physicalDamage> aux ennemis qu'il traverse. S'il touche un champion ennemi, il réactive automatiquement cette compétence et peut le traverser de nouveau. Chaque passage lui permet de gagner {{ emovementattackSpeed*100 }}% de vitesse de déplacement pendant {{ eduration }} sec, jusqu'à un maximum de {{ edurationmax }} sec.<br /><br />Les champions ennemis touchés par la ruée subissent également des dégâts réduits de {{ ereduction*100 }}%.",
-        maxrank: 5,
-        cooldown: "{9,8,7,6,5}",
-        cooldownburn: "9/8/7/6/5",
-        cost: "{0,0,0,0,0}",
-        costburn: "Pas de coût",
-        resource: "100",
-        range: "{300,300,300,300,300}",
-        maxammo: 300,
-        effect: "{null,0,0,0,0,0,0,0,0,0,0}",
-        effectburn: "Pas de coût",
-        costtype: "-1",
-        leveltipLabel: "{{{ cooldown }} -> {{ cooldownNL }},{{ ebasedamage }} -> {{ ebasedamageNL }},{{ ebonusad*100.000000 }}% -> {{ ebonusadnl*100.000000 }}%}",
-        leveltipEffect: "{null,{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0}}",
-        rangeburn: "{Délai de récupération,Dégâts,Vitesse de déplacement,Diminution des dégâts}",
-        image_url: "14929"
-      },
-      {
-        id: "AatroxR",
-        championid: "Aatrox",
-        name: "Fossoyeur des mondes",
-        description: "Aatrox libère sa forme démoniaque, effrayant les sbires ennemis proches et augmentant ses dégâts d'attaque, ses soins et sa vitesse de déplacement. La durée est prolongée s'il participe à l'élimination d'un champion ennemi.",
-        tooltip: "Aatrox révèle sa vraie forme démoniaque, <status>effrayant</status> les sbires proches pendant {{ rminionfearduration }} sec et gagnant <speed>+{{ rmovementspeedbonus*100 }}% de vitesse de déplacement</speed> (ce bonus diminue en {{ rduration }} sec). Il gagne aussi <scaleAD>+{{ rtotaladamp*100 }}% de dégâts d'attaque</scaleAD> et augmente ses <healing>soins personnels de {{ rhealingamp*100 }}%</healing> pendant la durée.<br /><br />Participer à l'élimination d'un champion prolonge la durée de cet effet de {{ rextension }} sec et réinitialise le bonus en <speed>vitesse de déplacement</speed>.",
-        maxrank: 3,
-        cooldown: "{120,100,80}",
-        cooldownburn: "120/100/80",
-        cost: "{0,0,0}",
-        costburn: "Pas de coût",
-        resource: "250",
-        range: "{550,550,550}",
-        maxammo: -1,
-        effect: "{null,0,0,0,0,0,0,0,0,0,0}",
-        effectburn: "Pas de coût",
-        costtype: "-1",
-        leveltipLabel: "{{{ rtotaladamp*100.000000 }}% -> {{ rtotaladampnl*100.000000 }}%,{{ rhealingamp*100.000000 }}% -> {{ rhealingampnl*100.000000 }}%,{{ rmovementspeedbonus*100.000000 }}% -> {{ rmovementspeedbonusnl*100.000000 }}%,{{ cooldown }} -> {{ cooldownNL }}}",
-        leveltipEffect: "{null,{0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0}}",
-        rangeburn: "{Total du bonus en dégâts d'attaque,Augmentation des soins,Vitesse de déplacement,Délai de récupération}",
-        image_url: "14930"
-      }
-]
+// Données de test
+const spells: Spells[] = [
+  new Spells(
+    "Champion1",
+    "A",
+    "Description of Spell A for Champion1. This spell allows Champion1 to unleash a powerful blast of energy, dealing massive damage to enemies in a wide area. It also applies a debuff that reduces their movement speed and increases their vulnerability to subsequent attacks. Use this spell strategically to turn the tide of battle!",
+    "Range A",
+    "Spell A",
+    [20, 18, 15.5, 14, 12], // Exemple de cooldowns avec une liste de taille 5
+    [50, 60, 70, 80, 90] // Exemple de coûts avec une liste de taille 5
+  ),
+  new Spells(
+    "Champion1",
+    "B",
+    "Description of Spell B for Champion1. With this spell, Champion1 creates an impenetrable shield that blocks all incoming damage for a short duration. It provides valuable protection and allows Champion1 to engage in risky situations without fear. Use this spell wisely to nullify enemy attacks and protect yourself and your allies.",
+    "Range B",
+    "Spell B",
+    [15, 13, 12, 10.5, 9], // Exemple de cooldowns avec une liste de taille 5
+    [40, 45, 50, 55, 60] // Exemple de coûts avec une liste de taille 5
+  ),
+  new Spells(
+    "Champion2",
+    "A",
+    "Description of Spell A for Champion2. Champion2 channels their inner strength and enters a heightened state, gaining increased attack speed, movement speed, and bonus damage. This spell turns Champion2 into a formidable force on the battlefield, capable of decimating enemies with lightning-fast strikes. Unleash the power of this spell to dominate your opponents!",
+    "Range A",
+    "Spell A",
+    [25, 23, 20], // Exemple de cooldowns avec une liste de taille 4
+    [60, 70, 80] // Exemple de coûts avec une liste de taille 4
+  ),
+  new Spells(
+    "Champion2",
+    "B",
+    "Description of Spell B for Champion2. With this spell, Champion2 creates a mystical barrier that blocks all incoming projectiles and reduces incoming damage from melee attacks. It provides temporary invulnerability and allows Champion2 to survive dangerous situations. Master the timing of this spell to negate enemy damage and escape unscathed.",
+    "Range B",
+    "Spell B",
+    [12, 11, 9], // Exemple de cooldowns avec une liste de taille 4
+    [80, 90, 110] // Exemple de coûts avec une liste de taille 4
+  ),
+];
+
+export const MOCK_SPELLS = spells;

@@ -1,0 +1,19 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 4fr; /* Deux colonnes avec largeur égale */
+    grid-gap: 20px; /* Espacement entre les éléments */
+  }
+
+  .left {
+    grid-column: 1; /* Occupe la première colonne */
+  }
+
+  .right {
+    grid-column: 2; /* Occupe la deuxième colonne */
+  }
+
+  .card-img-top {
+    max-width: 100%; /* Définit la largeur maximale de l'image à 100% */
+    height: auto; /* Ajuste automatiquement la hauteur en fonction de la largeur */
+  }
+  

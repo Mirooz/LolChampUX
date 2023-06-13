@@ -1,0 +1,37 @@
+.spell-card {
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .spell-container {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .spell-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .spell-letter {
+    font-weight: bold;
+  }
+  
+  .spell-range {
+    text-align: center;
+  }
+  
+  .spell-cost {
+    text-align: right;
+  }
+  
+  .spell-cooldown {
+    text-align: right;
+  }
+  
+  .spell-description {
+    margin-top: 10px;
+  }
+  

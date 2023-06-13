@@ -28,6 +28,12 @@ export class ChampListServiceService {
       catchError((error) => this.handleError(error, undefined))
     )
   }
+  getSpellsByChamp(championid : string) : Observable<Spells[]> {
+    return this.http.get<Spells[]>(`${this.api}/spells?championName=${championid}`).pipe(
+      tap((response) => this.log(response)),
+      catchError((error) => this.handleError(error, undefined))
+    )
+  }
 
   getStatForChamp(championid : string) : Observable<Stats|undefined> {
     this.log(`api/stats?championid=${championid}`)

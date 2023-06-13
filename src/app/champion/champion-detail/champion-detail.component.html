@@ -1,6 +1,6 @@
-<div class="container d-flex align-items-center justify-content-center" style="height: 80vh;">
-  <div *ngIf="champion && stats">
-    <div class="card mx-auto" style="width: 18rem;">
+<div class="container">
+  <div class="left">
+    <div *ngIf="champion && stats" class="card">
       <img class="card-img-top" [src]="champion.image_url" alt="Photo du champion">
       <div class="card-body">
         <h2 class="card-title">{{ champion.name }}</h2>
@@ -18,5 +18,8 @@
       </div>
     </div>
   </div>
-  <app-spells></app-spells>
+  
+  <div class="">
+    <app-spells [champion]="champion"></app-spells>
+  </div>
 </div>

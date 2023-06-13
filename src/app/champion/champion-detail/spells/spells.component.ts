@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Champion } from '../../model/champion';
+import { ChampListServiceService } from '../../champion-list/champ-list-service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Spells } from '../../model/spells';
 
 @Component({
   selector: 'app-spells',
@@ -7,4 +11,23 @@ import { Component } from '@angular/core';
 })
 export class SpellsComponent {
 
+  @Input() champion : Champion | any
+  spells: Spells[] = [];
+
+  constructor(private champListService: ChampListServiceService, 
+    private route: ActivatedRoute,
+    private router : Router) {}
+
+  ngOnInit(): void {
+    
+    const ChampId: string|null = this.route.snapshot.paramMap.get('id');
+    if (ChampId){
+      this.champListService.getSpellsByChamp(ChampId).subscribe((spells) => {
+        console.log("spells : ");
+        console.log(spells)
+        
+      this.spells = spells;
+    });
+  }
+  }
 }

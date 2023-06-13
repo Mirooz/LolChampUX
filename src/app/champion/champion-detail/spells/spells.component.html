@@ -1,1 +1,21 @@
-<p>spells works!</p>
+<div class="container d-flex">
+    <div *ngIf="champion">
+      <div class="card mx-auto">
+        <div class="card-body">
+          <h4 class="mb-4 text-center">Sorts</h4>
+          <div *ngFor="let spell of spells" class="spell-card">
+            <div class="spell-container">
+              <div class="spell-header">
+                <div class="spell-letter">{{ spell.letter }}</div>
+                <div class="spell-range">{{ spell.range }}</div>
+                <div class="spell-cost">{{ spell.costs | formatArray }}</div>
+              </div>
+              <div class="spell-cooldown">{{ spell.cooldowns | formatArray }}</div>
+              <p class="spell-description">{{ spell.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
