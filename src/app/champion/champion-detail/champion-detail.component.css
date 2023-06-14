@@ -12,8 +12,12 @@
     grid-column: 2; /* Occupe la deuxième colonne */
   }
 
+
   .card-img-top {
     max-width: 100%; /* Définit la largeur maximale de l'image à 100% */
     height: auto; /* Ajuste automatiquement la hauteur en fonction de la largeur */
   }
-  
+
+  .container {
+    overflow-x: hidden;
+  }

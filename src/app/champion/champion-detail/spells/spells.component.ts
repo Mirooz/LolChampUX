@@ -28,9 +28,15 @@ export class SpellsComponent {
       this.champListService.getSpellsByChamp(ChampId).subscribe((spells) => {
         console.log("spells : ");
         console.log(spells)
-        
+        spells.sort(this.spellSort);
       this.spells = spells;
     });
   }
+  }
+ spellSort(a: any, b: any): number {
+    const order = ['P', 'Q', 'W', 'E', 'R'];
+    const indexA = order.indexOf(a.letter);
+    const indexB = order.indexOf(b.letter);
+    return indexA - indexB;
   }
 }

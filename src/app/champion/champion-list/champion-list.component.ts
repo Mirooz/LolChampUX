@@ -3,11 +3,16 @@ import { Champion } from '../model/champion';
 import { CHAMPIONS } from '../../MOKS/champions-MOKS';
 import { ChampListService } from './champ-list-service';
 import { Router } from '@angular/router';
+import { trigger, transition, style, animate } from '@angular/animations';
+import { slideInAnimation } from 'src/app/utils/animation';
 
 @Component({
   selector: 'app-champion-list',
   templateUrl: './champion-list.component.html',
-  styleUrls: ['./champion-list.component.css']
+  styleUrls: ['./champion-list.component.css'],
+  animations: [
+    slideInAnimation
+  ]
 })
 export class ChampionListComponent implements OnInit {
   championList: Champion[] | undefined;
@@ -17,10 +22,11 @@ export class ChampionListComponent implements OnInit {
   constructor(private champListService: ChampListService, private router : Router) {}
 
   ngOnInit(): void {
+    console.log('list ' + this.championList)
    this.champListService.getListChampions().subscribe((champions) => {
     this.championList = champions;
     
-    console.log(champions.at(0)?.id);
+    console.log('ini');
       this.filteredChampionList = this.championList; 
     });
   }

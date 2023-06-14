@@ -14,6 +14,12 @@
     justify-content: space-between;
     align-items: center;
   }
+.spell-range-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
   
   .spell-letter {
     font-weight: bold;

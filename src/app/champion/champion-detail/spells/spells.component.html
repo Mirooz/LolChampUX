@@ -7,10 +7,13 @@
             <div class="spell-container">
               <div class="spell-header">
                 <div class="spell-letter">{{ spell.letter }}</div>
-                <div class="spell-range">{{ spell.range }}</div>
-                <div class="spell-cost">{{ spell.spellCosts | formatArray: 'cost' }}</div>
+                <div class="spell-range-container">
+                  <div class="spell-range">Portée : {{ spell.range }}</div>
+                </div>
+                <div *ngIf="spell.spellCosts.length>0" class="spell-cost">Coût : {{ spell.spellCosts | formatArray: 'cost' }}</div>
               </div>
-              <div class="spell-cooldown">{{ spell.spellCooldowns | formatArray: 'cooldown' }}</div>
+              
+              <div *ngIf="spell.spellCooldowns.length>0"class="spell-cooldown">Cooldown : {{ spell.spellCooldowns | formatArray: 'cooldown' }}</div>
               <p class="spell-description">{{ spell.description }}</p>
             </div>
           </div>

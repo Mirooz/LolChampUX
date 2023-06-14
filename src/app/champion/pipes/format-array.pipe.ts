@@ -19,7 +19,7 @@ export class FormatArrayPipe implements PipeTransform {
   
 
   private formatValue(value: number): string {
-    const formattedValue = Math.floor(value).toString().padStart(2, '0');
+    const formattedValue = Math.floor(value).toString();
     
     console.log(formattedValue)
     return formattedValue;

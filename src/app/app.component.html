@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>League of Legends: Encyclopédie</title>
-  <link rel="stylesheet" href="app.component.css">
+  <!-- Vos balises meta, lien vers les feuilles de style, etc. -->
 </head>
+
 <body>
-  <nav class="blue darken-3">
+  <nav class="blue darken-3" style="position: sticky; top: 0; z-index: 100;">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo center">League of Legends: Encyclopédie</a>
+      <a routerLink="/" class="brand-logo center">League of Legends</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="#">Accueil</a></li>
-        <li><a href="#">Champions</a></li>
-        <li><a href="#">À propos</a></li>
+        <li><a routerLink="/accueil">Accueil</a></li>
+        <li><a routerLink="/champions">Champions</a></li>
       </ul>
     </div>
   </nav>
 
   <div class="container">
+
     <router-outlet></router-outlet>
   </div>
-
   <script src="runtime.js"></script>
   <script src="polyfills.js"></script>
   <script src="vendor.js"></script>
