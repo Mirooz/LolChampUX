@@ -6,7 +6,8 @@ import { ChampListService } from './champion-list/champ-list-service';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { ChampionDetailComponent } from './champion-detail/champion-detail.component';
 import { SpellsComponent } from './champion-detail/spells/spells.component';
-import { FormatArrayPipe } from './champion-detail/format-array.pipe';
+import { FormatArrayPipe } from './pipes/format-array.pipe';
+import { ImagesPipe } from './pipes/images.pipe';
 
 
 
@@ -16,7 +17,8 @@ import { FormatArrayPipe } from './champion-detail/format-array.pipe';
         ChampionListComponent,
         SearchBarComponent,
         SpellsComponent,
-        FormatArrayPipe
+        FormatArrayPipe,
+        ImagesPipe
     ],
     providers: [ChampListService],
     exports: [ChampionListComponent],

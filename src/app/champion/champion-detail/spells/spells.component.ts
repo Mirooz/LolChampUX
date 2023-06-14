@@ -21,6 +21,9 @@ export class SpellsComponent {
   ngOnInit(): void {
     
     const ChampId: string|null = this.route.snapshot.paramMap.get('id');
+    console.log(ChampId);
+    console.log("ici")
+    
     if (ChampId){
       this.champListService.getSpellsByChamp(ChampId).subscribe((spells) => {
         console.log("spells : ");

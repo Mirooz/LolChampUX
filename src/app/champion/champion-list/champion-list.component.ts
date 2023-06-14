@@ -19,6 +19,8 @@ export class ChampionListComponent implements OnInit {
   ngOnInit(): void {
    this.champListService.getListChampions().subscribe((champions) => {
     this.championList = champions;
+    
+    console.log(champions.at(0)?.id);
       this.filteredChampionList = this.championList; 
     });
   }
@@ -41,18 +43,5 @@ export class ChampionListComponent implements OnInit {
       );
     }
   }
-  getModifiedImageSource(imageFullName: string): string {
-    // Récupérer l'extension de fichier (par exemple, ".png")
-    const extension = imageFullName.substring(imageFullName.lastIndexOf('.'));
-  
-    // Retirer l'extension du nom de fichier (par exemple, "Aatrox")
-    const fileName = imageFullName.substring(0, imageFullName.lastIndexOf('.'));
-  
-    // Ajouter le suffixe "_0" avant l'extension (par exemple, "Aatrox_0.png")
-    const modifiedFileName = `assets/img/${fileName}_0.jpg`;
-  
-    console.log(modifiedFileName);
-    
-    return modifiedFileName;
-  }
+
 }

@@ -5,7 +5,7 @@
       <div class="col-lg-2 col-md-3 col-sm-4 col-6">
         <div (click)="goToChampion(champion)" class="card" >
           <div class="card-image">
-            <img [src]="getModifiedImageSource(champion.imageFullName)" alt="Champion Image" />
+            <img [src]="champion.imageFullName | images" alt="Champion Image" />
           </div>
           <div class="card-content">
             <p class="champion-name center">{{ champion.name | uppercase }}</p>
