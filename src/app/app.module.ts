@@ -30,7 +30,7 @@ const routes: Routes = [
     FormsModule,
     ChampionModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService,{ dataEncapsulation: false }),
+   // HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService,{ dataEncapsulation: false }),
     RouterModule.forChild(routes)
   ],
   providers: [],

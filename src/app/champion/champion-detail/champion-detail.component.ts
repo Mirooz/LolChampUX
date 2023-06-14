@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Champion } from '../model/champion';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ChampListServiceService } from '../champion-list/champ-list-service';
+import { ChampListService } from '../champion-list/champ-list-service';
 import { Stats } from '../model/stats';
 
 @Component({
@@ -16,7 +16,7 @@ export class ChampionDetailComponent implements OnInit{
   constructor(
     private route: ActivatedRoute,
     
-    private championService: ChampListServiceService ) { }
+    private championService: ChampListService ) { }
 
   ngOnInit(): void {
     const ChampId: string|null = this.route.snapshot.paramMap.get('id');

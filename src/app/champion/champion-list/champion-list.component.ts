@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Champion } from '../model/champion';
 import { CHAMPIONS } from '../../MOKS/champions-MOKS';
-import { ChampListServiceService } from './champ-list-service';
+import { ChampListService } from './champ-list-service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,12 +14,12 @@ export class ChampionListComponent implements OnInit {
   filteredChampionList: Champion[] | undefined;
   searchQuery: string = '';
 
-  constructor(private champListService: ChampListServiceService, private router : Router) {}
+  constructor(private champListService: ChampListService, private router : Router) {}
 
   ngOnInit(): void {
-    this.champListService.getListChampions().subscribe((champions) => {
-      this.championList = champions;
-      this.filteredChampionList = this.championList; // Set initial filtered list to the complete champion list
+   this.champListService.getListChampions().subscribe((champions) => {
+    this.championList = champions;
+      this.filteredChampionList = this.championList; 
     });
   }
 
@@ -40,5 +40,19 @@ export class ChampionListComponent implements OnInit {
         champion.name.toLowerCase().includes(this.searchQuery.toLowerCase())
       );
     }
+  }
+  getModifiedImageSource(imageFullName: string): string {
+    // Récupérer l'extension de fichier (par exemple, ".png")
+    const extension = imageFullName.substring(imageFullName.lastIndexOf('.'));
+  
+    // Retirer l'extension du nom de fichier (par exemple, "Aatrox")
+    const fileName = imageFullName.substring(0, imageFullName.lastIndexOf('.'));
+  
+    // Ajouter le suffixe "_0" avant l'extension (par exemple, "Aatrox_0.png")
+    const modifiedFileName = `assets/img/${fileName}_0.jpg`;
+  
+    console.log(modifiedFileName);
+    
+    return modifiedFileName;
   }
 }

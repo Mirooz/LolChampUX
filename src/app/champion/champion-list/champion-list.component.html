@@ -5,14 +5,14 @@
       <div class="col-lg-2 col-md-3 col-sm-4 col-6">
         <div (click)="goToChampion(champion)" class="card" >
           <div class="card-image">
-            <img [src]="champion.image_url" alt="Champion Image" />
+            <img [src]="getModifiedImageSource(champion.imageFullName)" alt="Champion Image" />
           </div>
           <div class="card-content">
             <p class="champion-name center">{{ champion.name | uppercase }}</p>
             <div class="champion-types">
-              <span class="champion-type" *ngFor="let type of champion.partype">
+         <!--    <span class="champion-type" *ngFor="let type of champion.partype">
                 {{ type }}
-              </span>
+              </span> -->
             </div>
           </div>
         </div>

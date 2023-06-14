@@ -34,6 +34,22 @@ export const CHAMPIONS: Champion[] = [
     2,
     3,
     4
+  ),  new Champion(
+    'champion5',
+    2,
+    'Champion 2',
+    'Champion 2 Title',
+    'Champion 2 Lore',
+    'Champion 2 Blurb',
+    ['Partype 2','simp'],
+    'assets/img/Aatrox_1.jpg',
+    'Champion 2 Ally Tips',
+    'Champion 2 Enemy Tips',
+    'Tag 2',
+    1,
+    2,
+    3,
+    4
   ),
   // Ajoutez les autres champions ici
 ];

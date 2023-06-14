@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Champion } from '../../model/champion';
-import { ChampListServiceService } from '../../champion-list/champ-list-service';
+import { ChampListService } from '../../champion-list/champ-list-service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Spells } from '../../model/spells';
 
@@ -14,7 +14,7 @@ export class SpellsComponent {
   @Input() champion : Champion | any
   spells: Spells[] = [];
 
-  constructor(private champListService: ChampListServiceService, 
+  constructor(private champListService: ChampListService, 
     private route: ActivatedRoute,
     private router : Router) {}
 

@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ChampListServiceService } from './champ-list-service';
+import { ChampListService } from './champ-list-service';
 
 describe('ChampListServiceService', () => {
-  let service: ChampListServiceService;
+  let service: ChampListService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ChampListServiceService);
+    service = TestBed.inject(ChampListService);
   });
 
   it('should be created', () => {

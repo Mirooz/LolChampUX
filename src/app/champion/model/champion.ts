@@ -6,7 +6,7 @@ export class Champion {
     lore: string;
     blurb: string;
     partype: string[];
-    image_url: String;
+    imageFullName: string;
     allytips: string;
     enemytips: string;
     tags: string;
@@ -23,7 +23,7 @@ export class Champion {
       lore: string,
       blurb: string,
       partype: string[],
-      image_url: string,
+      imageFullName: string,
       allytips: string,
       enemytips: string,
       tags: string,
@@ -39,7 +39,7 @@ export class Champion {
       this.lore = lore;
       this.blurb = blurb;
       this.partype = partype;
-      this.image_url = image_url;
+      this.imageFullName = imageFullName;
       this.allytips = allytips;
       this.enemytips = enemytips;
       this.tags = tags;

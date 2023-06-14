@@ -8,10 +8,13 @@ import { Spells } from '../model/spells';
 @Injectable({
   providedIn: 'root'
 })
-export class ChampListServiceService {
+export class ChampListService {
 
   searchQuery: string = '';
-  api : string = 'api'
+// MOCK
+  //api : string = 'api'
+
+  api : string = 'http://localhost:8080';
   constructor(private http: HttpClient) {}
 
   //API
