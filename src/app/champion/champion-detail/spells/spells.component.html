@@ -1,24 +1,25 @@
-<div class="container d-flex">
-    <div *ngIf="champion">
-      <div class="card mx-auto">
-        <div class="card-body">
-          <h4 class="mb-4 text-center">Sorts</h4>
-          <div *ngFor="let spell of spells" class="spell-card">
-            <div class="spell-container">
-              <div class="spell-header">
-                <div class="spell-letter">{{ spell.letter }}</div>
-                <div class="spell-range-container">
-                  <div class="spell-range">Portée : {{ spell.range }}</div>
-                </div>
-                <div *ngIf="spell.spellCosts.length>0" class="spell-cost">Coût : {{ spell.spellCosts | formatArray: 'cost' }}</div>
-              </div>
-              
-              <div *ngIf="spell.spellCooldowns.length>0"class="spell-cooldown">Cooldown : {{ spell.spellCooldowns | formatArray: 'cooldown' }}</div>
-              <p class="spell-description">{{ spell.description }}</p>
+<div class="container">
+  <div *ngIf="champion">
+    <div class="card mx-auto">
+      <div class="card-body">
+        <h4 class="mb-4 text-center">Sorts</h4>
+        <div *ngFor="let spell of spells" class="spell-card">
+          <div class="spell-container spell-animation">
+            <div class="spell-header">
+              <div class="spell-letter">{{ spell.letter }}</div>
+
+              <div class="spell-range">Portée : {{ spell.range }}</div>
+
             </div>
+            <div *ngIf="spell.spellCosts.length>0" class="spell-cost">Coût : {{ spell.spellCosts | formatArray: 'cost'
+              }}</div>
+
+            <div *ngIf="spell.spellCooldowns.length>0" class="spell-cooldown">Cooldown : {{ spell.spellCooldowns |
+              formatArray: 'cooldown' }}</div>
+            <p class="spell-description">{{ spell.description }}</p>
           </div>
         </div>
       </div>
     </div>
   </div>
-  
+</div>

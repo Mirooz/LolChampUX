@@ -3,6 +3,32 @@
 
 <head>
   <!-- Vos balises meta, lien vers les feuilles de style, etc. -->
+  <style>
+    .brand-logo {
+      white-space: nowrap; /* Empêche le texte de se couper en plusieurs lignes */
+      overflow: hidden; /* Masque le contenu débordant */
+      text-overflow: ellipsis; /* Ajoute des points de suspension si le texte dépasse */
+      max-width: 100%; /* Limite la largeur du texte */
+    }
+
+    @media (max-width: 600px) { /* Définit les styles pour les vues mobiles */
+      .brand-logo {
+        font-size: 18px; /* Ajuste la taille de police pour s'adapter à l'espace limité */
+      }
+
+      .nav-wrapper {
+        flex-direction: column; /* Affiche les éléments du header en colonne */
+        align-items: center; /* Centre les éléments horizontalement */
+        padding-bottom: 8px; /* Ajoute un peu d'espace en bas pour éviter le chevauchement */
+      }
+
+      #nav-mobile {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -17,7 +43,6 @@
   </nav>
 
   <div class="container">
-
     <router-outlet></router-outlet>
   </div>
   <script src="runtime.js"></script>
@@ -25,4 +50,5 @@
   <script src="vendor.js"></script>
   <script src="main.js"></script>
 </body>
+
 </html>

@@ -1,11 +1,11 @@
-<div [@slideInAnimation]>
+<div>
 <div class="search">
 <app-search-bar (searchQueryChange)="onSearchQuery($event)"></app-search-bar>
 </div>
 <div class="container transition">
   <div class="row justify-content-start">
     <ng-container *ngFor="let champion of filteredChampionList" >
-      <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+      <div class="col-lg-2 col-md-3 col-sm-4 col-4">
         <div (click)="goToChampion(champion)" class="card" >
           <div class="card-image">
             <img [src]="champion.imageFullName | images" alt="Champion Image" />

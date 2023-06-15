@@ -1,23 +1,44 @@
 .container {
-    display: grid;
-    grid-template-columns: 1fr 4fr; /* Deux colonnes avec largeur égale */
-    grid-gap: 20px; /* Espacement entre les éléments */
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden; /* Ajout de cette propriété pour masquer le débordement horizontal */
+}
+
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.left {
+  order: 1;
+}
+
+.right {
+  order: 2;
+}
+.stickybutton {
+  position: sticky;
+   top:70px;
+    z-index: 100;
+}
+@media (min-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: row;
   }
 
   .left {
-    grid-column: 1; /* Occupe la première colonne */
+    order: 0;
+    flex-basis: 30%;
   }
 
   .right {
-    grid-column: 2; /* Occupe la deuxième colonne */
+    order: 1;
+    flex-basis: 70%;
   }
 
+  
+}
 
-  .card-img-top {
-    max-width: 100%; /* Définit la largeur maximale de l'image à 100% */
-    height: auto; /* Ajuste automatiquement la hauteur en fonction de la largeur */
-  }
-
-  .container {
-    overflow-x: hidden;
-  }

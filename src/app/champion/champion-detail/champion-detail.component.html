@@ -1,4 +1,6 @@
-<div *ngIf="champion"  class="container" [@slideInAnimation]>
+<button  class="btn btn-warning stickybutton" (click)="goBack()">Retour</button>
+
+<div *ngIf="champion"  class="container">
   <div class="left" >
     <div *ngIf="champion && stats" class="card">
       <img class="card-img-top" [src]="champion.imageFullName|images" alt="Photo du champion">
@@ -17,10 +19,9 @@
         <p class="card-text">Vitesse de mouvement: {{ stats.movespeed }}</p>
       </div>
     </div>
-    <button  class="btn btn-warning" (click)="goBack()">Retour</button>
-  </div>
+     </div>
   
-  <div class="">
+  <div class="right">
     <app-spells [champion]="champion"></app-spells>
   </div>
 </div>

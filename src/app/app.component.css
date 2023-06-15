@@ -12,18 +12,14 @@ h1 {
     background-image: url('/assets/img/background/lolbg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100vh; /* Ajoutez cette ligne pour définir une hauteur minimale égale à 100% de la vue du port */
-    margin: 0; /* Ajoutez cette ligne pour supprimer les marges par défaut */
-    padding: 0; /* Ajoutez cette ligne pour supprimer les rembourrages par défaut */
-    overflow-x: hidden;
-  
+
   background-attachment: fixed;
   }
 
+nav {
+  position: sticky; top: 0; z-index: 100;
+}
 
-  
-
-  
 
 
 
