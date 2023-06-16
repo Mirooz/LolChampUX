@@ -14,7 +14,7 @@ export class ChampListService {
 // MOCK
   //api : string = 'api'
 
-  api : string = 'http://localhost:8080';
+  api : string = 'https://lousy-basin-production.up.railway.app';
   constructor(private http: HttpClient) {}
 
   //API
