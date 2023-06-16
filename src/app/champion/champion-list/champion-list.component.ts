@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Champion } from '../model/champion';
-import { CHAMPIONS } from '../../MOKS/champions-MOKS';
 import { ChampListService } from './champ-list-service';
 import { Router } from '@angular/router';
 import { trigger, transition, style, animate } from '@angular/animations';

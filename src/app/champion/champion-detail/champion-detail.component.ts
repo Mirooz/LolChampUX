@@ -35,7 +35,9 @@ export class ChampionDetailComponent implements OnInit{
       this.championService.getChampion(ChampId)
         .subscribe(champion => {
           this.champion = champion,
-          console.log(this.champion)}
+          console.log(this.champion),
+          console.log(this.champion?.imageFullname)}
+          
           );
       this.championService.getStatForChamp(ChampId)
       .subscribe(stats => {

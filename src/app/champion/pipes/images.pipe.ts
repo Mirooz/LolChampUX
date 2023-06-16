@@ -10,16 +10,18 @@ export class ImagesPipe implements PipeTransform {
 
   }
 
-  getModifiedImageSource(imageFullName: string): string {
+  getModifiedImageSource(imageFullname: string): string {
+    console.log(imageFullname)
     // Récupérer l'extension de fichier (par exemple, ".png")
-    const extension = imageFullName.substring(imageFullName.lastIndexOf('.'));
+    const extension = imageFullname.substring(imageFullname.lastIndexOf('.'));
   
     // Retirer l'extension du nom de fichier (par exemple, "Aatrox")
-    const fileName = imageFullName.substring(0, imageFullName.lastIndexOf('.'));
+    const fileName = imageFullname.substring(0, imageFullname.lastIndexOf('.'));
   
     // Ajouter le suffixe "_0" avant l'extension (par exemple, "Aatrox_0.png")
     const modifiedFileName = `assets/img/${fileName}_0.jpg`;
   
+
     
     return modifiedFileName;
   }

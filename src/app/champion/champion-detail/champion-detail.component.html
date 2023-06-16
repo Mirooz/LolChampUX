@@ -3,7 +3,7 @@
 <div *ngIf="champion"  class="container">
   <div class="left" >
     <div *ngIf="champion && stats" class="card">
-      <img class="card-img-top" [src]="champion.imageFullName|images" alt="Photo du champion">
+      <img class="card-img-top" [src]="champion.imageFullname|images" alt="Photo du champion">
       <div class="card-body">
         <h2 class="card-title">{{ champion.name }}</h2>
         <h3 class="card-subtitle mb-2 text-muted">{{ champion.title }}</h3>
